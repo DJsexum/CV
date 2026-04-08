@@ -2,38 +2,44 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
-	<div class="mx-auto min-h-screen max-w-4xl px-6 py-14 sm:px-8">
-		<section class="rounded-3xl border border-slate-700 bg-slate-950/90 p-8 shadow-lg shadow-slate-950/50">
-			<header class="mb-8">
-				<p class="text-sm uppercase tracking-[0.3em] text-cyan-400">Información Personal</p>
-				<h1 class="mt-3 text-4xl font-semibold text-white">Juan Cruz Cabrera</h1>
-				<p class="mt-4 max-w-2xl text-slate-300">Estudiante de programación con interés en tecnología, desarrollo y seguridad.</p>
-			</header>
+<Layout title="CV - Información Personal">
+    <div class="mx-auto min-h-screen max-w-4xl px-6 py-14 sm:px-8">
+        <section class="rounded-3xl border border-slate-700 bg-slate-950/90 p-8 shadow-lg shadow-slate-950/50">
+            
+            <header class="mb-8">
+                <p class="text-sm uppercase tracking-[0.3em] text-cyan-400 font-bold">Información Personal</p>
+                <h1 class="mt-3 text-4xl font-bold text-white uppercase tracking-tight">Juan Cruz Cabrera</h1>
+                <p class="mt-4 max-w-2xl text-slate-300">
+                    Estudiante de programación con interés en tecnología, desarrollo y seguridad.
+                </p>
+            </header>
 
-			<div class="grid gap-6 lg:grid-cols-2">
-				<article class="rounded-3xl bg-slate-900/80 p-6">
-					<h2 class="text-xl font-semibold text-white">Datos de contacto</h2>
-					<ul class="mt-4 space-y-3 text-slate-300">
-						<li><strong>Ubicación:</strong> Ceres, Santa Fe, Argentina</li>
-						<li><strong>Correo:</strong> juancruzcabrerasocin@gmail.com</li>
-						<li><strong>Habilidades:</strong> C, Java, TypeScript, archivos Markdown</li>
-					</ul>
-				</article>
+            <div class="grid gap-6 lg:grid-cols-2">
+                <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic">Datos de contacto</h2>
+                    <ul class="mt-4 space-y-3 text-slate-300">
+                        <li><strong class="text-cyan-400">Ubicación:</strong> Ceres, Santa Fe, Argentina</li>
+                        <li><strong class="text-cyan-400">Correo:</strong> juancruzcabrerasocin@gmail.com</li>
+                        <li><strong class="text-cyan-400">Habilidades:</strong> C, Java, TypeScript, Markdown</li>
+                    </ul>
+                </article>
 
-				<article class="rounded-3xl bg-slate-900/80 p-6">
-					<h2 class="text-xl font-semibold text-white">Educación y fortalezas</h2>
-					<ul class="mt-4 space-y-3 text-slate-300">
-						<li><strong>Idiomas:</strong> Español, Inglés</li>
-						<li><strong>Formación:</strong> Procesador de texto, Excel, seguridad en telecomunicaciones, digitalización de trabajo</li>
-						<li><strong>Rol actual:</strong> Estudiante de programación</li>
-					</ul>
-				</article>
-			</div>
+                <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic">Educación y fortalezas</h2>
+                    <ul class="mt-4 space-y-3 text-slate-300">
+                        <li><strong class="text-cyan-400">Idiomas:</strong> Español, Inglés</li>
+                        <li><strong class="text-cyan-400">Formación:</strong> Excel, Seguridad en Telecomunicaciones, Digitalización</li>
+                        <li><strong class="text-cyan-400">Rol actual:</strong> Estudiante de programación</li>
+                    </ul>
+                </article>
+            </div>
 
-			<div class="mt-10 flex justify-start">
-				<a href="/" class="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">Volver al CV</a>
-			</div>
-		</section>
-	</div>
+            <div class="mt-10 flex justify-start">
+                <a href="/" class="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-400">
+                    ← VOLVER AL CV
+                </a>
+            </div>
+
+        </section>
+    </div>
 </Layout>

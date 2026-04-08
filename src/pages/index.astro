@@ -2,43 +2,54 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
-	<div class="mx-auto max-w-4xl px-6 py-14 sm:px-8">
-		<section class="rounded-3xl border border-slate-700 bg-slate-950/90 p-8 shadow-lg shadow-slate-950/50">
-			<header class="mb-8">
-				<p class="text-sm uppercase tracking-[0.3em] text-cyan-400">Currículum Vitae</p>
-				<h1 class="mt-3 text-4xl font-semibold text-white">Nombre Apellido</h1>
-				<p class="mt-4 max-w-2xl text-slate-300">Desarrollador web con pasión por crear páginas limpias, accesibles y adaptables usando Astro y Tailwind CSS.</p>
-			<div class="mt-6">
-				<a href="/personal" class="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-400">Ver información personal</a>
-			</div>
-					<h2 class="text-xl font-semibold text-white">Experiencia</h2>
-					<ul class="mt-4 space-y-4 text-slate-300">
-						<li>
-							<strong>Desarrollador Frontend</strong>
-							<p class="text-sm">Proyecto personal con Astro — 2024</p>
-						</li>
-						<li>
-							<strong>Creación de sitios web</strong>
-							<p class="text-sm">Diseño y desarrollo responsive</p>
-						</li>
-					</ul>
-				</article>
+<Layout title="CV - Inicio">
+    <div class="mx-auto max-w-4xl px-6 py-14 sm:px-8">
+        <section class="rounded-3xl border border-slate-700 bg-slate-950/90 p-8 shadow-lg shadow-slate-950/50">
+            
+            <header class="mb-8">
+                <p class="text-sm uppercase tracking-[0.3em] text-cyan-400 font-bold">Currículum Vitae</p>
+                <h1 class="mt-3 text-4xl font-bold text-white uppercase">Nombre Apellido</h1>
+                <p class="mt-4 max-w-2xl text-slate-300">
+                    Desarrollador web con pasión por crear páginas limpias, accesibles y adaptables usando **Astro** y **Tailwind CSS**.
+                </p>
+                
+                <div class="mt-6">
+                    <a href="/personal" class="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-400">
+                        VER INFORMACIÓN PERSONAL
+                    </a>
+                </div>
+            </header>
 
-				<article class="rounded-3xl bg-slate-900/80 p-6">
-					<h2 class="text-xl font-semibold text-white">Educación</h2>
-					<ul class="mt-4 space-y-4 text-slate-300">
-						<li>
-							<strong>Curso de Astro</strong>
-							<p class="text-sm">Aprendiendo Astro y Tailwind</p>
-						</li>
-						<li>
-							<strong>HTML, CSS y JavaScript</strong>
-							<p class="text-sm">Base fuerte para crear interfaces web</p>
-						</li>
-					</ul>
-				</article>
-			</div>
-		</section>
-	</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2">Experiencia</h2>
+                    <ul class="mt-4 space-y-4 text-slate-300">
+                        <li>
+                            <strong class="text-cyan-400">Desarrollador Frontend</strong>
+                            <p class="text-sm">Proyecto personal con Astro — 2026</p>
+                        </li>
+                        <li>
+                            <strong class="text-cyan-400">Creación de sitios web</strong>
+                            <p class="text-sm">Diseño y desarrollo responsive</p>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2">Educación</h2>
+                    <ul class="mt-4 space-y-4 text-slate-300">
+                        <li>
+                            <strong class="text-cyan-400">Curso de Astro</strong>
+                            <p class="text-sm">Aprendiendo Astro y Tailwind</p>
+                        </li>
+                        <li>
+                            <strong class="text-cyan-400">HTML, CSS y JavaScript</strong>
+                            <p class="text-sm">Base fuerte para crear interfaces web</p>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+
+        </section>
+    </div>
 </Layout>
