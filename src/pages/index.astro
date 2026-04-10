@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Habilidades from '../components/habilidades.svelte';
+
+const habilidadesTecnicas = ["Astro", "Tailwind", "Markdown", "Svelte", "TypeScript", "Kali Linux"];
 ---
 
 <Layout title="CV - Inicio">
@@ -14,6 +17,10 @@ import Layout from '../layouts/Layout.astro';
                 </p>
                 
                 <div class="mt-6">
+                    <Habilidades habilidades={habilidadesTecnicas} client:load />
+                </div>
+
+                <div class="mt-8">
                     <a href="/personal" class="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-400">
                         VER INFORMACIÓN PERSONAL
                     </a>
@@ -22,28 +29,28 @@ import Layout from '../layouts/Layout.astro';
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                 <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
-                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2">Experiencia</h2>
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic">Experiencia</h2>
                     <ul class="mt-4 space-y-4 text-slate-300">
                         <li>
-                            <strong class="text-cyan-400">Desarrollador Frontend</strong>
+                            <strong class="text-cyan-400 font-bold">Desarrollador Frontend</strong>
                             <p class="text-sm">Proyecto personal con Astro — 2026</p>
                         </li>
                         <li>
-                            <strong class="text-cyan-400">Creación de sitios web</strong>
+                            <strong class="text-cyan-400 font-bold">Creación de sitios web</strong>
                             <p class="text-sm">Diseño y desarrollo responsive</p>
                         </li>
                     </ul>
                 </article>
 
                 <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
-                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2">Educación</h2>
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic">Educación</h2>
                     <ul class="mt-4 space-y-4 text-slate-300">
                         <li>
-                            <strong class="text-cyan-400">Curso de Astro</strong>
+                            <strong class="text-cyan-400 font-bold">Curso de Astro</strong>
                             <p class="text-sm">Aprendiendo Astro y Tailwind</p>
                         </li>
                         <li>
-                            <strong class="text-cyan-400">HTML, CSS y JavaScript</strong>
+                            <strong class="text-cyan-400 font-bold">HTML, CSS y JavaScript</strong>
                             <p class="text-sm">Base para crear interfaces web</p>
                         </li>
                     </ul>
