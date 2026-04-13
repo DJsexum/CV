@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// Importamos la interfaz para asegurar que los datos sean correctos
-import type { DatosContacto } from '../core/interfaces/cv.interfaces.ts';
+import type { DatosContacto } from '../core/interfaces/cv.interfaces';
 
+// Aplicamos la interfaz DatosContacto para validar el objeto
 const misDatos: DatosContacto = 
 {
     ubicacion: "Ceres, Santa Fe, Argentina",
     correo: "juancruzcabrerasocin@gmail.com",
     habilidades: ["C", "Java", "TypeScript", "Markdown"],
-    formacion: ["Excel", "Seguridad en Telecomunicaciones", "Digitalización"]
+    formacion: ["Excel", "Seguridad en Telecomunicaciones", "Digitalización", "Programación III"]
 };
 ---
 
@@ -26,7 +26,7 @@ const misDatos: DatosContacto =
 
             <div class="grid gap-6 lg:grid-cols-2">
                 <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
-                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic">Datos de contacto</h2>
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic uppercase">Datos de contacto</h2>
                     <ul class="mt-4 space-y-3 text-slate-300">
                         <li><strong class="text-cyan-400 font-bold">Ubicación:</strong> {misDatos.ubicacion}</li>
                         <li><strong class="text-cyan-400 font-bold">Correo:</strong> {misDatos.correo}</li>
@@ -34,7 +34,7 @@ const misDatos: DatosContacto =
                 </article>
 
                 <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800">
-                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic">Fortalezas</h2>
+                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic uppercase">Fortalezas</h2>
                     <ul class="mt-4 space-y-2 text-slate-300">
                         {misDatos.formacion.map((item) => (
                             <li class="flex items-center">
