@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Habilidades from '../components/habilidades.svelte';
 import { Image } from 'astro:assets';
-import miFoto from '../assets/juan-cabrera.jpg'; 
 
 const habilidadesTecnicas: string[] = ["Astro", "Tailwind", "Markdown", "Svelte", "TypeScript", "C", "Java", "Kali Linux"];
 ---
@@ -15,7 +14,7 @@ const habilidadesTecnicas: string[] = ["Astro", "Tailwind", "Markdown", "Svelte"
                 <div class="flex flex-col md:flex-row md:items-center gap-6">
                     <div class="flex-shrink-0 flex justify-center md:justify-start">
                         <Image 
-                            src={miFoto} 
+                            src="/juan-cabrera.jpg" 
                             alt="Juan Cruz Cabrera Socin" 
                             width={128} 
                             height={128} 
