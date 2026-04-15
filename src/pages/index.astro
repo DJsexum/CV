@@ -1,73 +1,80 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Habilidades from '../components/habilidades.svelte';
+import { Image } from 'astro:assets';
+import miFoto from '../assets/juan-cabrera.jpg'; 
 
 const habilidadesTecnicas: string[] = ["Astro", "Tailwind", "Markdown", "Svelte", "TypeScript", "C", "Java", "Kali Linux"];
 ---
 
 <Layout title="CV - Inicio">
     <div class="mx-auto max-w-4xl px-6 py-14 sm:px-8">
-        <section class="rounded-3xl border border-slate-700 bg-slate-950/90 p-8 shadow-lg shadow-slate-950/50">
+        <section class="rounded-3xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-950/90 p-8 shadow-lg transition-colors duration-300">
             
             <header class="mb-8">
-                <p class="text-sm uppercase tracking-[0.3em] text-cyan-400 font-bold">Currículum Vitae</p>
-                <h1 class="mt-3 text-4xl font-bold text-white uppercase tracking-tight">Juan Cruz Cabrera Socin</h1>
+                <div class="flex flex-col md:flex-row md:items-center gap-6">
+                    <div class="flex-shrink-0 flex justify-center md:justify-start">
+                        <Image 
+                            src={miFoto} 
+                            alt="Juan Cruz Cabrera Socin" 
+                            width={128} 
+                            height={128} 
+                            quality="high"
+                            class="rounded-full border-4 border-cyan-600 dark:border-cyan-500 shadow-xl shadow-cyan-500/20"
+                        />
+                    </div>
+
+                    <div class="text-center md:text-start">
+                        <p class="text-sm uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400 font-bold">Currículum Vitae</p>
+                        <h1 class="mt-2 text-4xl font-bold text-slate-950 dark:text-white uppercase tracking-tight">Juan Cruz Cabrera Socin</h1>
+                    </div>
+                </div>
                 
-                <p class="mt-4 max-w-2xl text-slate-300">
-                    Desarrollador web con conocimientos y uso de <strong class="text-white">Astro</strong>, <strong class="text-white">Tailwind</strong> y <strong class="text-white">Markdown</strong>. 
+                <p class="mt-6 max-w-2xl text-slate-700 dark:text-slate-300 text-center md:text-start mx-auto md:mx-0">
+                    Desarrollador web con conocimientos y uso de <strong class="text-slate-950 dark:text-white">Astro</strong>, <strong class="text-slate-950 dark:text-white">Tailwind</strong> y <strong class="text-slate-950 dark:text-white">Markdown</strong>. 
                     Estudiante de programación en la UTN.
                 </p>
                 
-                <div class="mt-6">
+                <div class="mt-6 flex justify-center md:justify-start">
                     <Habilidades habilidades={habilidadesTecnicas} client:load />
                 </div>
 
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="/personal" class="inline-flex items-center justify-center rounded-full bg-cyan-500 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
+                <div class="mt-8 flex justify-center md:justify-start">
+                    <a href="/personal" class="inline-flex items-center justify-center rounded-full bg-cyan-600 dark:bg-cyan-500 px-8 py-3 text-sm font-bold text-white dark:text-slate-950 transition hover:bg-cyan-500 dark:hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
                         VER INFORMACIÓN PERSONAL
-                    </a>
-                    
-                    <a 
-                        href="https://github.com/DJsexum" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/50 px-6 py-3 text-sm font-bold text-white transition hover:bg-slate-800 hover:border-slate-600"
-                    >
-                        MI GITHUB
                     </a>
                 </div>
             </header>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-                <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800 hover:border-slate-700 transition-colors">
-                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic uppercase">Experiencia</h2>
-                    <ul class="mt-4 space-y-4 text-slate-300">
+                <article class="rounded-3xl bg-slate-50 dark:bg-slate-900/80 p-6 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-colors">
+                    <h2 class="text-xl font-bold text-slate-950 dark:text-white border-b border-cyan-600/30 dark:border-cyan-500/30 pb-2 italic uppercase">Experiencia</h2>
+                    <ul class="mt-4 space-y-4 text-slate-700 dark:text-slate-300">
                         <li>
-                            <strong class="text-cyan-400 font-bold">Desarrollador Frontend</strong>
+                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">Desarrollador Frontend</strong>
                             <p class="text-sm">Proyecto personal con Astro — 2026</p>
                         </li>
                         <li>
-                            <strong class="text-cyan-400 font-bold">Creación de sitios web</strong>
+                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">Creación de sitios web</strong>
                             <p class="text-sm">Diseño y desarrollo responsive</p>
                         </li>
                     </ul>
                 </article>
 
-                <article class="rounded-3xl bg-slate-900/80 p-6 border border-slate-800 hover:border-slate-700 transition-colors">
-                    <h2 class="text-xl font-bold text-white border-b border-cyan-500/30 pb-2 italic uppercase">Educación</h2>
-                    <ul class="mt-4 space-y-4 text-slate-300">
+                <article class="rounded-3xl bg-slate-50 dark:bg-slate-900/80 p-6 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-colors">
+                    <h2 class="text-xl font-bold text-slate-950 dark:text-white border-b border-cyan-600/30 dark:border-cyan-500/30 pb-2 italic uppercase">Educación</h2>
+                    <ul class="mt-4 space-y-4 text-slate-700 dark:text-slate-300">
                         <li>
-                            <strong class="text-cyan-400 font-bold">Curso de Astro</strong>
+                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">Curso de Astro</strong>
                             <p class="text-sm">Aprendiendo Astro y Tailwind</p>
                         </li>
                         <li>
-                            <strong class="text-cyan-400 font-bold">HTML, CSS y JavaScript</strong>
+                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">HTML, CSS y JavaScript</strong>
                             <p class="text-sm">Base para crear interfaces web</p>
                         </li>
                     </ul>
                 </article>
             </div>
-
         </section>
     </div>
 </Layout>
