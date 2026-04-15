@@ -2,6 +2,7 @@ export interface DatosContacto
 {
     ubicacion: string;
     correo: string;
+    telefono: string;
     habilidades: string[];
     formacion: string[];
 }

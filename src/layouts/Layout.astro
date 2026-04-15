@@ -1,9 +1,8 @@
 ---
 import "../styles/global.css";
-import CambiarAModoOscuro from "../components/CambiarAModoOscuro.svelte";
+import CambiarAModoOscuro from '../components/CambiarAModoOscuro.svelte';
 
-interface Props 
-{
+interface Props {
     title: string;
 }
 
@@ -17,43 +16,41 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
+        
         <script is:inline>
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) 
-            {
-                document.documentElement.classList.add('dark');
-            } 
-            else 
-            {
+            const theme = (() => {
+                if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
+                }
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
+                }
+                return 'light';
+            })();
+          
+            if (theme === 'light') {
                 document.documentElement.classList.remove('dark');
+            } else {
+                document.documentElement.classList.add('dark');
             }
         </script>
     </head>
-    <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-200 font-sans antialiased min-h-screen flex flex-col transition-colors duration-300">
+    <body class="bg-slate-50 text-slate-900 transition-colors duration-500 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col">
         
         <div class="fixed top-6 right-6 z-50">
-            <CambiarAModoOscuro client:load />
+            <CambiarAModoOscuro client:load /> 
         </div>
 
         <main class="flex-grow">
             <slot />
         </main>
 
-        <footer class="py-8 border-t border-slate-200 bg-slate-50 dark:border-slate-900 dark:bg-slate-950/50">
+        <footer class="py-8 border-t border-slate-200 bg-white dark:border-slate-900 dark:bg-slate-950/50">
             <div class="max-w-4xl mx-auto px-6 text-center">
-                <p class="text-sm text-slate-500 font-medium">
-                    © 2026 - Juan Cruz Cabrera Socin
-                </p>
-                <a 
-                    href="https://github.com/DJsexum" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="inline-block mt-3 text-cyan-600 dark:text-cyan-500 hover:text-cyan-500 dark:hover:text-cyan-400 text-xs font-bold uppercase tracking-widest transition-colors"
-                >
-                    GITHUB: DJSEXUM
+                <p class="text-sm text-slate-500 font-medium">© 2026 - Juan Cruz Cabrera Socin</p>
+                <a href="https://github.com/DJsexum" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-cyan-600 dark:text-cyan-500 hover:text-cyan-400 text-xs font-bold uppercase tracking-widest transition-colors">
+                    GITHUB: @DJSEXUM
                 </a>
-                <p class="text-[10px] text-slate-400 dark:text-slate-700 mt-3 uppercase tracking-tighter">
-                    Desarrollado con Astro, Svelte y Tailwind para Programación III
-                </p>
             </div>
         </footer>
     </body>
