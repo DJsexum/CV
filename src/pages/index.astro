@@ -3,77 +3,78 @@ import Layout from '../layouts/Layout.astro';
 import Habilidades from '../components/habilidades.svelte';
 import { Image } from 'astro:assets';
 
-const habilidadesTecnicas: string[] = ["Astro", "Tailwind", "Markdown", "Svelte", "TypeScript", "C", "Java", "Kali Linux"];
+const habilidadesTecnicas: string[] = ["ASTRO", "TAILWIND", "SVELTE", "TYPESCRIPT", "JAVA", "KALI LINUX"];
 ---
 
-<Layout title="CV - Inicio">
-    <div class="mx-auto max-w-4xl px-6 py-14 sm:px-8">
-        <section class="rounded-3xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-950/90 p-8 shadow-lg transition-colors duration-300">
-            
-            <header class="mb-8">
-                <div class="flex flex-col md:flex-row md:items-center gap-6">
-                    <div class="flex-shrink-0 flex justify-center md:justify-start">
-                        <Image 
-                            src="/juan-cabrera.jpg" 
-                            alt="Juan Cruz Cabrera Socin" 
-                            width={128} 
-                            height={128} 
-                            quality="high"
-                            class="rounded-full border-4 border-cyan-600 dark:border-cyan-500 shadow-xl shadow-cyan-500/20"
-                        />
-                    </div>
+<Layout title="Juan Cruz Cabrera | Portfolio">
+  <div class="mx-auto max-w-6xl px-6 py-20">
+    
+    <section class="glass-card p-12 md:p-20 relative overflow-hidden mb-12">
+      <div class="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/20 blur-[120px] rounded-full"></div>
+      
+      <div class="relative z-10 flex flex-col md:flex-row items-center gap-16">
+        <div class="relative">
+          <div class="absolute inset-0 bg-cyan-400 blur-3xl opacity-30 animate-pulse"></div>
+          <Image 
+            src="/juan-cabrera.jpg" 
+            alt="Juan Cruz" 
+            width={220} 
+            height={220} 
+            class="relative rounded-[3rem] border-2 border-white/20 rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl"
+          />
+        </div>
 
-                    <div class="text-center md:text-start">
-                        <p class="text-sm uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400 font-bold">Currículum Vitae</p>
-                        <h1 class="mt-2 text-4xl font-bold text-slate-950 dark:text-white uppercase tracking-tight">Juan Cruz Cabrera Socin</h1>
-                    </div>
-                </div>
-                
-                <p class="mt-6 max-w-2xl text-slate-700 dark:text-slate-300 text-center md:text-start mx-auto md:mx-0">
-                    Desarrollador web con conocimientos y uso de <strong class="text-slate-950 dark:text-white">Astro</strong>, <strong class="text-slate-950 dark:text-white">Tailwind</strong> y <strong class="text-slate-950 dark:text-white">Markdown</strong>. 
-                    Estudiante de programación en la UTN.
-                </p>
-                
-                <div class="mt-6 flex justify-center md:justify-start">
-                    <Habilidades habilidades={habilidadesTecnicas} client:load />
-                </div>
+        <div class="flex-1 text-center md:text-left">
+          <p class="text-cyan-500 font-black tracking-[0.5em] text-xs uppercase mb-4">Desarrollador de Software</p>
+          <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none mb-6 text-slate-900 dark:text-white">
+            JUAN CRUZ <br/> <span class="text-gradient">CABRERA</span>
+          </h1>
+          <p class="text-xl opacity-70 max-w-xl font-medium leading-relaxed">
+            Especializado en arquitecturas modernas con <span class="text-cyan-500 font-bold">Astro</span> y ciberseguridad. Estudiante de la <span class="font-bold">UTN</span> transformando código en soluciones reales.
+          </p>
+        </div>
+      </div>
 
-                <div class="mt-8 flex justify-center md:justify-start">
-                    <a href="/personal" class="inline-flex items-center justify-center rounded-full bg-cyan-600 dark:bg-cyan-500 px-8 py-3 text-sm font-bold text-white dark:text-slate-950 transition hover:bg-cyan-500 dark:hover:bg-cyan-400 shadow-lg shadow-cyan-500/20">
-                        VER INFORMACIÓN PERSONAL
-                    </a>
-                </div>
-            </header>
+      <div class="mt-16 flex flex-wrap gap-4 justify-center md:justify-start">
+        <Habilidades habilidades={habilidadesTecnicas} client:load />
+      </div>
+      
+      <div class="mt-12 flex flex-wrap gap-6 justify-center md:justify-start">
+        <a href="/personal" class="px-10 py-5 bg-cyan-600 hover:bg-cyan-500 text-white font-black rounded-2xl transition-all hover:scale-105 shadow-xl shadow-cyan-500/20 uppercase text-xs tracking-[0.2em]">
+          Información Personal
+        </a>
+        
+        <a href="https://github.com/DJsexum" target="_blank" class="flex items-center gap-3 px-10 py-5 bg-slate-800 hover:bg-slate-700 text-white font-black rounded-2xl transition-all hover:scale-105 shadow-xl uppercase text-xs tracking-[0.2em]">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          Mi GitHub
+        </a>
+      </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-                <article class="rounded-3xl bg-slate-50 dark:bg-slate-900/80 p-6 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-colors">
-                    <h2 class="text-xl font-bold text-slate-950 dark:text-white border-b border-cyan-600/30 dark:border-cyan-500/30 pb-2 italic uppercase">Experiencia</h2>
-                    <ul class="mt-4 space-y-4 text-slate-700 dark:text-slate-300">
-                        <li>
-                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">Desarrollador Frontend</strong>
-                            <p class="text-sm">Proyecto personal con Astro — 2026</p>
-                        </li>
-                        <li>
-                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">Creación de sitios web</strong>
-                            <p class="text-sm">Diseño y desarrollo responsive</p>
-                        </li>
-                    </ul>
-                </article>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <article class="glass-card p-10">
+        <h2 class="text-3xl font-black uppercase mb-6 tracking-tight text-cyan-600 dark:text-cyan-400">Proyectos y Experiencia</h2>
+        <div class="space-y-6">
+          <div class="relative pl-6 border-l-2 border-cyan-500/20">
+            <h3 class="text-lg font-bold uppercase">TechStore UTN</h3>
+            <p class="text-sm opacity-60">Desarrollo y normalización de bases de datos SQL.</p>
+          </div>
+          <div class="relative pl-6 border-l-2 border-cyan-500/20">
+            <h3 class="text-lg font-bold uppercase">LaMasita</h3>
+            <p class="text-sm opacity-60">Automatización de mensajes de WhatsApp con Python.</p>
+          </div>
+        </div>
+      </article>
 
-                <article class="rounded-3xl bg-slate-50 dark:bg-slate-900/80 p-6 border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 transition-colors">
-                    <h2 class="text-xl font-bold text-slate-950 dark:text-white border-b border-cyan-600/30 dark:border-cyan-500/30 pb-2 italic uppercase">Educación</h2>
-                    <ul class="mt-4 space-y-4 text-slate-700 dark:text-slate-300">
-                        <li>
-                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">Curso de Astro</strong>
-                            <p class="text-sm">Aprendiendo Astro y Tailwind</p>
-                        </li>
-                        <li>
-                            <strong class="text-cyan-600 dark:text-cyan-400 font-bold">HTML, CSS y JavaScript</strong>
-                            <p class="text-sm">Base para crear interfaces web</p>
-                        </li>
-                    </ul>
-                </article>
-            </div>
-        </section>
+      <article class="glass-card p-10">
+        <h2 class="text-3xl font-black uppercase mb-6 tracking-tight text-blue-600 dark:text-blue-400">Educación</h2>
+        <div class="space-y-6">
+          <div class="relative pl-6 border-l-2 border-blue-500/20">
+            <h3 class="text-lg font-bold uppercase">UTN FRRE</h3>
+            <p class="text-sm opacity-60 uppercase">Tecnicatura Universitaria en Programación</p>
+          </div>
+        </div>
+      </article>
     </div>
+  </div>
 </Layout>
