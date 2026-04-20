@@ -1,40 +1,105 @@
 @import "tailwindcss";
 
 :root {
-  --bg-glow: radial-gradient(circle at top right, #e0f2fe, #f8fafc);
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --text-main: #0f172a;
-  --accent: #0ea5e9;
-  --border: rgba(15, 23, 42, 0.1);
+  /* Fondo y Colores Base */
+  --bg-color: #fffaf0; /* Crema cálido de la captura */
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-title: #0f172a; 
+  --border-color: #cbd5e1; /* Gris nítido para que el marco se note */
+  
+  /* Acentos y Etiquetas (Blue-600) */
+  --accent-color: #2563eb; 
+  --tag-bg: rgba(37, 99, 235, 0.05);
+  --tag-text: #2563eb;
 }
 
 :root.dark {
-  --bg-glow: radial-gradient(circle at top right, #082f49, #020617);
-  --card-bg: rgba(15, 23, 42, 0.6);
+  /* Modo Oscuro */
+  --bg-color: #030712; 
+  --card-bg: #0f172a; 
   --text-main: #f1f5f9;
-  --accent: #22d3ee;
-  --border: rgba(34, 211, 238, 0.2);
+  --text-title: #ffffff;
+  --border-color: #334155;
+  
+  /* Etiquetas en Modo Oscuro (Azul más brillante para contraste) */
+  --tag-bg: rgba(96, 165, 250, 0.15);
+  --tag-text: #60a5fa;
 }
 
 body {
-  background: var(--bg-glow);
+  background-color: var(--bg-color);
   color: var(--text-main);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Tarjetas con marcos definidos */
+.cv-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 2.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Etiquetas de tecnologías corregidas para modo oscuro */
+.skill-tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-text);
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
+}
+
+/* Utilidades de texto y acento */
+.text-main-title {
+  color: var(--text-title);
+}
+
+.text-blue-600 {
+  color: var(--accent-color);
+}
+
+.bg-blue-600 {
+  background-color: var(--accent-color);
+}
+
+/* Botones Grandes (Para index y personal) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem; /* Tamaño grande para no forzar la vista */
+  background-color: var(--accent-color);
+  color: white;
+  font-weight: 900;
+  border-radius: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  filter: brightness(110%);
+}
+
+/* Estructura para evitar scroll en pantallas estándar */
+.page-container {
   min-height: 100vh;
-  backdrop-filter: blur(100px);
-}
-
-.glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  border-radius: 3rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-.text-gradient {
-  background: linear-gradient(to right, var(--accent), #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
