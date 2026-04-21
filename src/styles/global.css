@@ -1,105 +1,122 @@
 @import "tailwindcss";
 
-:root {
-  /* Fondo y Colores Base */
-  --bg-color: #fffaf0; /* Crema cálido de la captura */
-  --card-bg: #ffffff;
-  --text-main: #1e293b;
-  --text-title: #0f172a; 
-  --border-color: #cbd5e1; /* Gris nítido para que el marco se note */
-  
-  /* Acentos y Etiquetas (Blue-600) */
-  --accent-color: #2563eb; 
-  --tag-bg: rgba(37, 99, 235, 0.05);
-  --tag-text: #2563eb;
-}
+@layer components {
+  :root {
+    --bg-color: #fffaf0; 
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-title: #0f172a; 
+    --border-color: #cbd5e1;
+    --accent-color: #2563eb; 
+    --tag-bg: rgba(37, 99, 235, 0.05);
+    --tag-text: #2563eb;
+  }
 
-:root.dark {
-  /* Modo Oscuro */
-  --bg-color: #030712; 
-  --card-bg: #0f172a; 
-  --text-main: #f1f5f9;
-  --text-title: #ffffff;
-  --border-color: #334155;
-  
-  /* Etiquetas en Modo Oscuro (Azul más brillante para contraste) */
-  --tag-bg: rgba(96, 165, 250, 0.15);
-  --tag-text: #60a5fa;
-}
+  :root.dark {
+    --bg-color: #030712; 
+    --card-bg: #0f172a; 
+    --text-main: #f1f5f9;
+    --text-title: #ffffff;
+    --border-color: #334155;
+    --tag-bg: rgba(96, 165, 250, 0.15);
+    --tag-text: #60a5fa;
+  }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  transition: background-color 0.5s ease, color 0.5s ease;
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  overflow-x: hidden;
-}
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease;
+  }
 
-/* Tarjetas con marcos definidos */
-.cv-card {
-  background-color: var(--card-bg);
-  border: 2px solid var(--border-color);
-  border-radius: 2.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-}
+  /* Ajuste de contenedor para evitar que los cuadros se peguen */
+  .page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    gap: 2.5rem; /* Separación constante entre secciones */
+    padding: 3rem 0;
+  }
 
-/* Etiquetas de tecnologías corregidas para modo oscuro */
-.skill-tag {
-  background-color: var(--tag-bg);
-  color: var(--tag-text);
-  border: 1px solid var(--tag-text);
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  display: inline-block;
-}
+  .cv-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 2.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  }
 
-/* Utilidades de texto y acento */
-.text-main-title {
-  color: var(--text-title);
-}
+  /* --- BOTONES --- */
+  .btn-primary, .btn-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transform: translateZ(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    will-change: transform, box-shadow;
+  }
 
-.text-blue-600 {
-  color: var(--accent-color);
-}
+  .btn-primary {
+    padding: 1.5rem 3rem !important;
+    border-radius: 1.5rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+  }
 
-.bg-blue-600 {
-  background-color: var(--accent-color);
-}
+  .btn-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 1.5rem !important;
+  }
 
-/* Botones Grandes (Para index y personal) */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 3rem; /* Tamaño grande para no forzar la vista */
-  background-color: var(--accent-color);
-  color: white;
-  font-weight: 900;
-  border-radius: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.875rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.2);
-}
+  .btn-github-icon {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+  }
 
-.btn-primary:hover {
-  transform: scale(1.05);
-  filter: brightness(110%);
-}
+  :root.dark .btn-github-icon {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15);
+  }
 
-/* Estructura para evitar scroll en pantallas estándar */
-.page-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  .btn-linkedin-icon {
+    background-color: #0077b5 !important;
+    color: white !important;
+    box-shadow: 0 10px 20px -5px rgba(0, 119, 181, 0.3);
+  }
+
+  .btn-primary:hover, .btn-icon:hover {
+    transform: translateY(-8px) scale(1.08) !important;
+    filter: brightness(1.1);
+  }
+
+  .btn-icon svg {
+    width: 2rem;
+    height: 2rem;
+    fill: currentColor;
+  }
+
+  .btn-primary:active, .btn-icon:active { transform: translateY(0) scale(0.95) !important; }
+
+  .skill-tag {
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    border: 1px solid var(--tag-text);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 900;
+  }
+  .text-main-title { color: var(--text-title); }
 }
