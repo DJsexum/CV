@@ -31,13 +31,12 @@
     transition: background-color 0.5s ease;
   }
 
-  /* Ajuste de contenedor para evitar que los cuadros se peguen */
   .page-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; 
-    gap: 2.5rem; /* Separación constante entre secciones */
+    gap: 2.5rem;
     padding: 3rem 0;
   }
 

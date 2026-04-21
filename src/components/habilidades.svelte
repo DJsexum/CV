@@ -1,5 +1,4 @@
 <script lang="ts">
-    // Usamos Svelte 5 runes
     let { habilidades = [] } = $props();
 </script>
 
